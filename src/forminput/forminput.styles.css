@@ -1,0 +1,41 @@
+.field {
+  margin: 2rem 0;
+}
+
+.form {
+  width: 60%;
+  margin-bottom: 1.5rem;
+}
+.form-input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  font-size: 1.8rem;
+  color: grey;
+  padding: 2rem 1rem;
+  border: 0;
+  border-bottom: 2px solid grey;
+  transition: all 0.4s ease-in;
+}
+.form-input:focus {
+  outline: 0;
+  border-bottom: 2px solid black;
+}
+.form-input:focus ~ .form-label {
+  top: -7rem;
+  font-size: 1.4rem;
+  color: black;
+}
+.form-label {
+  position: relative;
+  top: -3.5rem;
+  font-size: 1.6rem;
+  transition: all 0.3s ease-in;
+  color: grey;
+  pointer-events: none;
+}
+.form-label.shrink {
+  top: -7rem;
+  font-size: 1.4rem;
+  color: black;
+}/*# sourceMappingURL=forminput.styles.css.map */

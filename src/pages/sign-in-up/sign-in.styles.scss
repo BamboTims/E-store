@@ -1,0 +1,21 @@
+.sign-in{
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1{
+        font-size: 3rem;
+    }
+
+    & span{
+        font-size: 1.6rem;
+
+        & a:link,a:visited{
+            color: grey;
+            text-decoration: underline;
+        }
+    }
+}

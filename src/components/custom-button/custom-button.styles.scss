@@ -1,0 +1,22 @@
+.custom-button {
+	min-width: 1.5rem;
+	text-transform: uppercase;
+	background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    transition: 0.3s all ease-in;
+
+    &:hover{
+        background-color: white;
+        color: black;
+    }
+
+    &:focus{
+        outline: 0;
+        transform: scale(0.95);
+    }
+
+}

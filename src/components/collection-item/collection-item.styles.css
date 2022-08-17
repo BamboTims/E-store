@@ -1,0 +1,25 @@
+.collection-item {
+  width: 22%;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+}
+.collection-item .image {
+  height: 95%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.collection-footer {
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+.collection-footer .name {
+  width: 90%;
+}
+.collection-footer .price {
+  width: 10%;
+}/*# sourceMappingURL=collection-item.styles.css.map */

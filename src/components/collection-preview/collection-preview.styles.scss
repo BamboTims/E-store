@@ -1,0 +1,13 @@
+.collection {
+	display: flex;
+	flex-direction: row;
+    gap: 3rem;
+
+	&-preview {
+        margin-bottom: 3rem;
+		.title {
+			font-size: 3rem;
+            margin-bottom: 3rem;
+		}
+	}
+}

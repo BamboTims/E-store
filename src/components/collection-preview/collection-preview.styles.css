@@ -1,0 +1,12 @@
+.collection {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.collection-preview {
+  margin-bottom: 3rem;
+}
+.collection-preview .title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}/*# sourceMappingURL=collection-preview.styles.css.map */
