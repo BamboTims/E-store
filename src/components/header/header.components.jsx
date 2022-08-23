@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Logo } from "../../assets/Larkef x Rareblocks _ Logo #25.svg";
+import { ReactComponent as Logo } from "../../assets/Larkef.svg";
 import { Link } from "react-router-dom";
 import "./header.styles.css";
 import { connect } from "react-redux";
