@@ -1,1 +1,19 @@
-/*# sourceMappingURL=sign--in.styles.css.map */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-button.signWithGoogle {
+  display: flex;
+  align-items: center;
+  background-color: bisque;
+  color: black;
+}
+.custom-button.signWithGoogle svg {
+  height: 1.8rem;
+  margin-left: 1rem;
+}
+.custom-button.signWithGoogle:hover {
+  background-color: darkgrey;
+  color: white;
+}/*# sourceMappingURL=sign--in.styles.css.map */

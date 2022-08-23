@@ -2,21 +2,33 @@
 	min-width: 1.5rem;
 	text-transform: uppercase;
 	background-color: black;
-    color: white;
-    font-size: 1.5rem;
-    letter-spacing: 0.5px;
-    padding: 1.5rem 3rem;
-    cursor: pointer;
-    transition: 0.3s all ease-in;
+	color: white;
+	font-size: 1.5rem;
+	letter-spacing: 0.5px;
+	padding: 1.5rem 3rem;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	transition: 0.3s all ease-in;
 
-    &:hover{
-        background-color: white;
-        color: black;
-    }
+	&:hover {
+		background-color: white;
+		color: black;
+	}
 
-    &:focus{
-        outline: 0;
-        transform: scale(0.95);
-    }
+	&:focus {
+		outline: 0;
+		transform: scale(0.95);
+	}
+}
 
+.inverted {
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+
+	&:hover {
+		background-color: black;
+		color: white;
+	}
 }

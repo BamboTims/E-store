@@ -1,0 +1,48 @@
+.checkout-item {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	border-bottom: 1px solid #000;
+	justify-items: center;
+	align-items: center;
+	padding: 2rem 0;
+
+	.image-container {
+		height: 15rem;
+		border-radius: 5px;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	.name,
+	.quantity,
+	.remove,
+	.price {
+		font-size: 2rem;
+		font-weight: lighter;
+	}
+
+	.quantity {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		.arrow {
+			cursor: pointer;
+		}
+	}
+
+	.remove {
+		cursor: pointer;
+
+		svg{
+			height: 2rem;
+
+			&:hover{
+				transform: scale(1.05);
+			}
+		}
+	}
+}

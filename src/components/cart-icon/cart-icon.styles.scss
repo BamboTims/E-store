@@ -1,0 +1,16 @@
+.cartIcon {
+	height: 2.5rem;
+	width: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	span {
+		position: absolute;
+		color: black;
+		border-radius: 50%;
+		font-weight: bold;
+	}
+}

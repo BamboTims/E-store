@@ -9,4 +9,9 @@
 .collection-preview .title {
   font-size: 3rem;
   margin-bottom: 3rem;
+}
+.collection-preview .collection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }/*# sourceMappingURL=collection-preview.styles.css.map */

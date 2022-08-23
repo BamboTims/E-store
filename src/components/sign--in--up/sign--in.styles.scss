@@ -1,0 +1,21 @@
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.custom-button.signWithGoogle {
+	display: flex;
+	align-items: center;
+	background-color: bisque;
+	color: black;
+
+	svg {
+		height: 1.8rem;
+		margin-left: 1rem;
+	}
+
+	&:hover {
+		background-color: darkgrey;
+		color: white;
+	}
+}

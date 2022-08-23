@@ -1,0 +1,14 @@
+.collection {
+  display: flex;
+  flex-direction: column;
+}
+.collection h1 {
+  font-size: 2rem;
+}
+.collection .items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 3rem;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}/*# sourceMappingURL=collection.styles.css.map */

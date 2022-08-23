@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .header-logo {
   height: 100%;
@@ -14,6 +15,9 @@
   height: 100%;
   width: 100%;
 }
+.header-logo .logo:focus {
+  outline: 0;
+}
 .header-options {
   width: 50%;
   display: flex;
@@ -22,6 +26,6 @@
 }
 .header-option {
   padding: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }/*# sourceMappingURL=header.styles.css.map */

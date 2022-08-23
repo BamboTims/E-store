@@ -1,0 +1,36 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+}
+.checkout-header {
+  display: block;
+  margin: 1rem 0;
+}
+.checkout .checkout-details {
+  width: 60%;
+  margin: 0 auto;
+}
+.checkout .checkout-details .details-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid #000;
+  justify-items: center;
+}
+.checkout .checkout-details .details-header span {
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+}
+.checkout-summary {
+  align-self: flex-end;
+  border-bottom: 1px dashed #000;
+  margin-bottom: 1rem;
+}
+.checkout-summary h2 {
+  font-size: 4rem;
+  font-weight: lighter;
+  padding-bottom: 1rem;
+}
+.checkout button {
+  width: 30%;
+  margin: 0 auto;
+}/*# sourceMappingURL=checkout.styles.css.map */

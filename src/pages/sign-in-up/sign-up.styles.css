@@ -1,1 +1,19 @@
-/*# sourceMappingURL=sign-up.styles.css.map */
+.sign-up {
+  width: 50%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sign-up h2 {
+  font-size: 3rem;
+}
+.sign-up span {
+  font-size: 1.6rem;
+}
+.sign-up span a:link,
+.sign-up span a:visited {
+  color: grey;
+  text-decoration: underline;
+}/*# sourceMappingURL=sign-up.styles.css.map */

@@ -1,0 +1,50 @@
+.cart-dropdown {
+	position: absolute;
+	top: 9rem;
+	right: 6rem;
+	width: 25rem;
+	height: 35rem;
+	padding: 2rem;
+	background-color: white;
+	z-index: 5;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+
+	.empty-message {
+		font-weight: lighter;
+		display: block;
+		align-self: center;
+		margin: auto 0;
+		font-size: 1.8rem;
+	}
+
+	.cart-items {
+		display: flex;
+		flex-direction: column;
+		height: 25rem;
+		overflow-y: scroll;
+
+		&::-webkit-scrollbar {
+			width: 1px;
+		}
+	}
+
+	button {
+		margin-top: auto;
+
+		svg {
+			height: 1.5rem;
+			width: 1.5rem;
+			fill: white;
+			margin-left: 1rem;
+		}
+
+		&:hover {
+			svg {
+				fill: black;
+			}
+		}
+	}
+}

@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 1rem;
 
 	&-logo {
 		height: 100%;
@@ -13,6 +14,10 @@
 		.logo {
 			height: 100%;
 			width: 100%;
+
+			&:focus {
+				outline: 0;
+			}
 		}
 	}
 
@@ -25,7 +30,7 @@
 
 	&-option {
 		padding: 1rem;
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 		cursor: pointer;
 	}
 }

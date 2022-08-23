@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-
+import "./sign--in.styles.css";
+import { ReactComponent as Google } from "../../assets/google-svgrepo-com.svg";
 import FormImput from "../../forminput/forminput.components";
 import CustomButton from "../custom-button/custom-button.components";
-import {  signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 
 class SignIn extends Component {
 	constructor(props) {
@@ -14,8 +15,11 @@ class SignIn extends Component {
 		};
 	}
 
-	handleSubmit = (e) => {
+	handleSubmit = async (e) => {
 		e.preventDefault();
+
+		const { email, password } = this.state;
+		await auth.signInWithEmailAndPassword(email, password);
 
 		this.setState({ email: "", password: "" });
 	};
@@ -32,7 +36,6 @@ class SignIn extends Component {
 				<FormImput
 					type="email"
 					name="email"
-					className="form-input"
 					value={this.state.email}
 					handleChange={this.handleChange}
 					required
@@ -41,17 +44,18 @@ class SignIn extends Component {
 				<FormImput
 					type="password"
 					name="password"
-					className="form-input"
 					value={this.state.password}
 					onChange={this.handleChange}
 					required
 					label="Password"
 				/>
-				<CustomButton type="submit">Sign In</CustomButton>
-				<CustomButton onClick={signInWithGoogle}>
-					{""}
-					Sign In With Google{""}
-				</CustomButton>
+				<div className="buttons">
+					<CustomButton type="submit">Sign In</CustomButton>
+					<CustomButton type="button" signWithGoogle onClick={signInWithGoogle}>
+						Sign In With Google
+						<Google />
+					</CustomButton>
+				</div>
 			</form>
 		);
 	}

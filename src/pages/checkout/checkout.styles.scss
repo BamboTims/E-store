@@ -1,0 +1,42 @@
+.checkout {
+	display: flex;
+	flex-direction: column;
+	&-header {
+		display: block;
+		margin: 1rem 0;
+	}
+
+	.checkout-details {
+		width: 60%;
+		margin: 0 auto;
+
+		.details-header {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			border-bottom: 1px solid #000;
+			justify-items: center;
+
+			span {
+				padding: 1rem 2rem;
+				font-size: 1.7rem;
+			}
+		}
+	}
+
+	&-summary {
+		align-self: flex-end;
+		border-bottom: 1px dashed #000;
+		margin-bottom: 1rem;
+
+		h2 {
+			font-size: 4rem;
+			font-weight: lighter;
+			padding-bottom: 1rem;
+		}
+	}
+
+	button {
+		width: 30%;
+		margin: 0 auto;
+	}
+}

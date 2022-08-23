@@ -1,0 +1,15 @@
+.collection {
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	.items {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		row-gap: 3rem;
+		column-gap: 1.5rem;
+	}
+}
