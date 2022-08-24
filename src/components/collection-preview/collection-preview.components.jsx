@@ -1,8 +1,10 @@
 import React from "react";
 import CollectionItem from "../collection-item/collection-item.components";
+import { withRouter } from "react-router-dom";
+import CustomButton from "../custom-button/custom-button.components";
 import "./collection-preview.styles.css";
 
-const CollectionPreview = ({ title, items }) => {
+const CollectionPreview = ({ title, items, history, match }) => {
 	return (
 		<div className=" collection-preview">
 			<h1 className="title">{title}</h1>
@@ -13,8 +15,11 @@ const CollectionPreview = ({ title, items }) => {
 						<CollectionItem key={item.id} item={item} />
 					))}
 			</div>
+			<CustomButton
+				onClick={() => history.push(`${match.url}/${title.toLowerCase()}`)}
+			>{`More ${title} ...`}</CustomButton>
 		</div>
 	);
 };
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);

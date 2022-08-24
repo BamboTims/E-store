@@ -5,6 +5,16 @@
 
 	&-preview {
 		margin-bottom: 3rem;
+		display: flex;
+		flex-direction: column;
+
+		button {
+				width: 30%;
+				align-self: center;
+				margin-top: 3rem;
+				font-size: 1.6rem;
+			}
+
 		.title {
 			font-size: 3rem;
 			margin-bottom: 3rem;
