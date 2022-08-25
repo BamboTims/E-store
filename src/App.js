@@ -17,6 +17,7 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import { selectShopCollectionsForPreview } from "./redux/shop/shop.selectors";
 
 class App extends Component {
 	unsubscribeFromAuth = null;
@@ -42,6 +43,10 @@ class App extends Component {
 				});
 			}
 			setCurrentUser(userAuth);
+			//// addCollectionAndDocuments(
+			//// 	"collections",
+			//// 	collectionsArr.map(({ title, items }) => ({ title, items }))
+			//// );Upload data to database
 		});
 	}
 
@@ -81,6 +86,7 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
 	currentUser: selectCurrentUser,
+	collectionsArr: selectShopCollectionsForPreview,
 });
 
 const mapDispatchToProps = (dispatch) => ({
