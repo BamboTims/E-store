@@ -21,9 +21,9 @@ class ShopPage extends Component {
 	componentDidMount() {
 		const { updateCollection } = this.props;
 		const collectionRef = firestore.collection("collections");
-		collectionRef.onSnapshot(async (snapshot) => {
+
+		collectionRef.get().then((snapshot) => {
 			const collectionsMap = convertCollectionToMap(snapshot);
-			console.log(collectionsMap);
 			updateCollection(collectionsMap);
 			this.setState({ loading: false });
 		});
@@ -31,7 +31,7 @@ class ShopPage extends Component {
 
 	render() {
 		const { match } = this.props;
-		const {loading} = this.state;
+		const { loading } = this.state;
 		return (
 			<div className="shop">
 				<Route
