@@ -6,6 +6,7 @@ import shopTypes from "./shop.types";
 
 const fetchCollectionStart = () => ({
 	type: shopTypes.FETCH_COLLECTIONS_START,
+	isFetching: true,
 });
 
 const fetchCollectionSuccess = (collectionMap) => ({
@@ -19,17 +20,16 @@ const fetchCollectionFailed = (errorMessage) => ({
 });
 
 const fetchCollectionStartAsync = () => {
-	return (dispatch) => {
-		dispatch(fetchCollectionStart());
-		const collectionRef = firestore.collection("collections");
-
-		collectionRef
-			.get()
-			.then((snapshot) => {
-				const collectionsMap = convertCollectionToMap(snapshot);
-				dispatch(fetchCollectionSuccess(collectionsMap));
-			})
-			.catch((error) => dispatch(fetchCollectionFailed(error.message)));
+	return async (dispatch) => {
+		try {
+			dispatch(fetchCollectionStart());
+			const collectionRef = firestore.collection("collections");
+			const collectionSnapshot = await collectionRef.get();
+			const collectionsMap = convertCollectionToMap(collectionSnapshot);
+			dispatch(fetchCollectionSuccess(collectionsMap));
+		} catch (error) {
+			dispatch(fetchCollectionFailed(error.message));
+		}
 	};
 };
 
