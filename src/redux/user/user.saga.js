@@ -63,15 +63,18 @@ export function* signOut() {
 }
 
 export function* isUserCreated({
-	payload: { password, confirmPassword, email },
+	payload: { password, confirmPassword, displayName, email },
 }) {
 	if (password !== confirmPassword) {
 		alert("Passwords are not the same");
 		return;
 	}
 	try {
-		const { user } = auth.createUserWithEmailAndPassword(email, password);
-		const userRef = yield call(createUserProfileDocument, user);
+		const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+		console.log(user);
+		const userRef = yield call(createUserProfileDocument, user, {
+			displayName,
+		});
 		const userSnapshot = yield userRef.get();
 		yield put(signUpSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
 	} catch (error) {

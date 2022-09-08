@@ -10,7 +10,6 @@ const [userCredentials, setUserCredentials] = useState({displayName: "",
 			password: "",
 			confirmPassword: "",})
 
-
 			const { password, confirmPassword, displayName, email } = userCredentials;
 
 	const handleSubmit = async (e) => {
