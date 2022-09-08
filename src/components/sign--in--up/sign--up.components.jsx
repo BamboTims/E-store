@@ -1,41 +1,33 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import FormImput from "../../forminput/forminput.components";
 import CustomButton from "../custom-button/custom-button.components";
 import { signUpStart } from "../../redux/user/user.actions";
 import { connect } from "react-redux";
 
-class SignUp extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			displayName: "",
+const  SignUp = ({ signUpStart }) => {
+const [userCredentials, setUserCredentials] = useState({displayName: "",
 			email: "",
 			password: "",
-			confirmPassword: "",
-		};
-	}
+			confirmPassword: "",})
 
-	handleSubmit = async (e) => {
+
+			const { password, confirmPassword, displayName, email } = userCredentials;
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const { signUpStart } = this.props;
-		const { password, confirmPassword, displayName, email } = this.state;
 		signUpStart(password, confirmPassword, displayName, email);
 	};
-	handleChange = (e) => {
+	const handleChange = (e) => {
 		const { name, value } = e.target;
 
-		this.setState({ [name]: value });
+		setUserCredentials({...userCredentials, [name]: value });
 	};
-
-	render() {
-		const { displayName, email, password, confirmPassword } = this.state;
 		return (
-			<form className="form" onSubmit={this.handleSubmit}>
+			<form className="form" onSubmit={handleSubmit}>
 				<FormImput
 					name="displayName"
 					type="text"
-					onChange={this.handleChange}
+					onChange={handleChange}
 					value={displayName}
 					label="Name"
 				/>
@@ -43,28 +35,27 @@ class SignUp extends Component {
 					name="email"
 					type="email"
 					value={email}
-					onChange={this.handleChange}
+					onChange={handleChange}
 					label="Email"
 				/>
 				<FormImput
 					name="password"
 					type="password"
 					value={password}
-					onChange={this.handleChange}
+					onChange={handleChange}
 					label="Password"
 				/>
 				<FormImput
 					name="confirmPassword"
 					type="password"
 					value={confirmPassword}
-					onChange={this.handleChange}
+					onChange={handleChange}
 					label="Confirm Password"
 				/>
 				<CustomButton type="submit">SIGN UP</CustomButton>
 			</form>
 		);
 	}
-}
 
 const mapDispatchToProps = (dispatch) => ({
 	signUpStart: (password, confirmPassword, displayName, email) =>
