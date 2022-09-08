@@ -71,7 +71,6 @@ export function* isUserCreated({
 	}
 	try {
 		const { user } = yield auth.createUserWithEmailAndPassword(email, password);
-		console.log(user);
 		const userRef = yield call(createUserProfileDocument, user, {
 			displayName,
 		});
