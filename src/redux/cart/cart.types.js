@@ -3,6 +3,7 @@ const cartTypes = {
 	ADD_ITEM: "ADD_ITEM",
 	REMOVE_ITEM: "REMOVE_ITEM",
 	REDUCE_QUANTITY: "REDUCE_QUANTITY",
+	CLEAR_CART: "CLEAR_CART",
 };
 
 export default cartTypes;

@@ -2,39 +2,80 @@ import { takeLatest, put, call, all } from "redux-saga/effects";
 import {
 	auth,
 	createUserProfileDocument,
+	getCurrentUser,
 	googleProvider,
 } from "../../firebase/firebase.utils";
 import {
-	emailSignInFailed,
-	emailSignInSuccess,
-	googleSignInFailed,
-	googleSignInSuccess,
+	signInFailed,
+	signInSuccess,
+	signOutFailed,
+	signOutSuccess,
+	signUpFailed,
+	signUpSuccess,
 } from "./user.actions";
 import UserTypes from "./user.types";
+
+export function* getSnapshotFromUserAuth(userAuth) {
+	try {
+		const userRef = yield call(createUserProfileDocument, userAuth);
+		const userSnapshot = yield userRef.get();
+		yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
+	} catch (error) {
+		yield put(signInFailed(error.message));
+	}
+}
 
 export function* onGoogleSignIn() {
 	try {
 		const { user } = yield auth.signInWithPopup(googleProvider);
-		const userRef = yield call(createUserProfileDocument, user);
-		const userSnapshot = yield userRef.get();
-		yield put(
-			googleSignInSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
-		);
+		yield getSnapshotFromUserAuth(user);
 	} catch (error) {
-		put(googleSignInFailed(error.message));
+		yield put(signInFailed(error.message));
 	}
 }
 
 export function* onEmailSignIn({ payload: { email, password } }) {
 	try {
 		const { user } = yield auth.signInWithEmailAndPassword(email, password);
+		yield getSnapshotFromUserAuth(user);
+	} catch (error) {
+		yield put(signInFailed(error.message));
+	}
+}
+
+export function* isUserAuthenticated() {
+	try {
+		const userAuth = yield getCurrentUser();
+		if (!userAuth) return;
+		yield getSnapshotFromUserAuth(userAuth);
+	} catch (error) {
+		yield put(signInFailed(error.message));
+	}
+}
+
+export function* signOut() {
+	try {
+		yield auth.signOut();
+		yield put(signOutSuccess());
+	} catch (error) {
+		yield put(signOutFailed(error.message));
+	}
+}
+
+export function* isUserCreated({
+	payload: { password, confirmPassword, email },
+}) {
+	if (password !== confirmPassword) {
+		alert("Passwords are not the same");
+		return;
+	}
+	try {
+		const { user } = auth.createUserWithEmailAndPassword(email, password);
 		const userRef = yield call(createUserProfileDocument, user);
 		const userSnapshot = yield userRef.get();
-		yield put(
-			emailSignInSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
-		);
+		yield put(signUpSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
 	} catch (error) {
-		put(emailSignInFailed(error.message));
+		yield put(signUpFailed(error.message));
 	}
 }
 
@@ -46,6 +87,24 @@ export function* emailSignInStart() {
 	yield takeLatest(UserTypes.EMAIL_SIGN_IN_START, onEmailSignIn);
 }
 
+export function* checkUserSession() {
+	yield takeLatest(UserTypes.CHECK_USER_SESSION, isUserAuthenticated);
+}
+
+export function* signOutStart() {
+	yield takeLatest(UserTypes.SIGN_OUT_START, signOut);
+}
+
+export function* signUpStart() {
+	yield takeLatest(UserTypes.SIGN_UP_START, isUserCreated);
+}
+
 export function* userSagas() {
-	yield all([call(googleSignInStart), call(emailSignInStart)]);
+	yield all([
+		call(googleSignInStart),
+		call(emailSignInStart),
+		call(checkUserSession),
+		call(signOutStart),
+		call(signUpStart),
+	]);
 }
