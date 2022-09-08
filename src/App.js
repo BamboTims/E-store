@@ -22,7 +22,7 @@ class App extends Component {
 
 	componentDidMount() {
 		const { checkUserSession } = this.props;
-		this.unsubscribeFromAuth = checkUserSession();
+		checkUserSession();
 	}
 
 	componentWillUnmount() {
