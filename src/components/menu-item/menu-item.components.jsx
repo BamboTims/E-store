@@ -1,8 +1,11 @@
 import React from "react";
 import "./menu-items.styles.css";
-import { withRouter } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 
-const Menuitem = ({ title, url, linkurl, size, history, match }) => {
+const Menuitem = ({ title, url, linkurl, size }) => {
+	const history = useHistory();
+	const match = useRouteMatch();
+
 	return (
 		<div
 			className={`${size} menu-item`}
@@ -20,4 +23,4 @@ const Menuitem = ({ title, url, linkurl, size, history, match }) => {
 	);
 };
 
-export default withRouter(Menuitem);
+export default Menuitem;
