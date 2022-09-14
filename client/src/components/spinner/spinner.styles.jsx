@@ -8,7 +8,7 @@ export const SpinnerOverlay = styled.div`
 	align-items: center;
 `;
 
-export const Spinner = styled.div`
+export const SpinnerContainer = styled.div`
   height: 50px;
   width: 50px;
   border: 3px solid grey;
