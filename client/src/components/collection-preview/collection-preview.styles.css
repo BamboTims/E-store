@@ -9,10 +9,15 @@
   flex-direction: column;
 }
 .collection-preview button {
-  width: 30%;
+  width: 30vw;
   align-self: center;
   margin-top: 3rem;
   font-size: 1.6rem;
+}
+@media screen and (max-width: 800px) {
+  .collection-preview button {
+    width: 65vw;
+  }
 }
 .collection-preview .title {
   font-size: 3rem;
@@ -22,4 +27,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .collection-preview .collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .collection-preview {
+    align-items: center;
+  }
 }/*# sourceMappingURL=collection-preview.styles.css.map */

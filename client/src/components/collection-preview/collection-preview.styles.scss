@@ -9,11 +9,15 @@
 		flex-direction: column;
 
 		button {
-				width: 30%;
-				align-self: center;
-				margin-top: 3rem;
-				font-size: 1.6rem;
+			width: 30vw;
+			align-self: center;
+			margin-top: 3rem;
+			font-size: 1.6rem;
+
+			@media screen and (max-width:800px) {
+				width: 65vw;
 			}
+		}
 
 		.title {
 			font-size: 3rem;
@@ -22,6 +26,16 @@
 		.collection {
 			display: flex;
 			flex-direction: row;
+			align-items: center;
+
+			@media screen and (max-width: 800px) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 3rem;
+			}
+		}
+
+		@media screen and (max-width: 800px) {
 			align-items: center;
 		}
 	}

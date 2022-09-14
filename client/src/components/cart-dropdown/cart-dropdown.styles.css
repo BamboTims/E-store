@@ -12,6 +12,11 @@
   flex-direction: column;
   border: 1px solid black;
 }
+@media screen and (max-width: 800px) {
+  .cart-dropdown {
+    right: 1rem;
+  }
+}
 .cart-dropdown .empty-message {
   font-weight: lighter;
   display: block;

@@ -13,6 +13,8 @@
 
 		img {
 			height: 100%;
+			background-position: center;
+			background-size: cover;
 		}
 	}
 
@@ -37,12 +39,27 @@
 	.remove {
 		cursor: pointer;
 
-		svg{
+		svg {
 			height: 2rem;
 
-			&:hover{
+			&:hover {
 				transform: scale(1.05);
 			}
+		}
+	}
+
+	@media screen and (max-width: 800px) {
+		padding: 0;
+
+		.image-container {
+			height: 10rem;
+		}
+
+		.name,
+		.quantity,
+		.remove,
+		.price {
+			font-size: 1.5rem;
 		}
 	}
 }

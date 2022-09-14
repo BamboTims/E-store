@@ -1,6 +1,11 @@
 .checkout {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	
 	&-header {
 		display: block;
 		margin: 1rem 0;
@@ -8,7 +13,6 @@
 
 	.checkout-details {
 		width: 60%;
-		margin: 0 auto;
 
 		.details-header {
 			display: grid;
@@ -19,6 +23,17 @@
 			span {
 				padding: 1rem 2rem;
 				font-size: 1.7rem;
+			}
+		}
+
+		@media screen and (max-width:800px) {
+			width: 100%;
+
+			.details-header{
+				span{
+					font-size: 1.3rem;
+					padding: 1rem;
+				}
 			}
 		}
 	}
@@ -32,11 +47,14 @@
 			font-size: 4rem;
 			font-weight: lighter;
 			padding-bottom: 1rem;
+
+			@media screen and (max-width:800px) {
+				font-size: 2.5rem;
+			}
 		}
 	}
 
 	button {
-		width: 30%;
-		margin: 0 auto;
+		width: 40%;
 	}
 }

@@ -1,6 +1,9 @@
 .checkout {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .checkout-header {
   display: block;
@@ -8,7 +11,6 @@
 }
 .checkout .checkout-details {
   width: 60%;
-  margin: 0 auto;
 }
 .checkout .checkout-details .details-header {
   display: grid;
@@ -20,6 +22,15 @@
   padding: 1rem 2rem;
   font-size: 1.7rem;
 }
+@media screen and (max-width: 800px) {
+  .checkout .checkout-details {
+    width: 100%;
+  }
+  .checkout .checkout-details .details-header span {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+}
 .checkout-summary {
   align-self: flex-end;
   border-bottom: 1px dashed #000;
@@ -30,7 +41,11 @@
   font-weight: lighter;
   padding-bottom: 1rem;
 }
+@media screen and (max-width: 800px) {
+  .checkout-summary h2 {
+    font-size: 2.5rem;
+  }
+}
 .checkout button {
-  width: 30%;
-  margin: 0 auto;
+  width: 40%;
 }/*# sourceMappingURL=checkout.styles.css.map */

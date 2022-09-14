@@ -1,6 +1,13 @@
 .buttons {
 	display: flex;
-	justify-content: space-between;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+
+	@media screen and (max-width:800px) {
+		flex-direction: column;
+		
+	}
 }
 
 .custom-button.signWithGoogle {

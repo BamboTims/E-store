@@ -21,6 +21,10 @@ export const HeaderOptions = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+
+	@media screen and (max-width:800px) {
+		width: 80%;
+	}
 `;
 
 export const HeaderOption = styled(Link)`
@@ -43,5 +47,9 @@ export const LogoContainer = styled.div`
 		&:focus {
 			outline: 0;
 		}
+	}
+
+	@media screen and (max-width: 800px) {
+		width: 5rem;
 	}
 `;

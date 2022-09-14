@@ -16,4 +16,9 @@
 .sign-up span a:visited {
   color: grey;
   text-decoration: underline;
+}
+@media screen and (max-width: 800px) {
+  .sign-up {
+    width: 90vw;
+  }
 }/*# sourceMappingURL=sign-up.styles.css.map */

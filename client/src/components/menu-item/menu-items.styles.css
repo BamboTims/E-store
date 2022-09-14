@@ -9,6 +9,11 @@
   margin: 0 7.5px 15px;
   overflow: hidden;
 }
+@media screen and (max-width: 800px) {
+  .menu-item {
+    height: 20rem;
+  }
+}
 .menu-item:first-child {
   margin-right: 7.5px;
 }
@@ -17,6 +22,11 @@
 }
 .menu-item.large {
   height: 38rem;
+}
+@media screen and (max-width: 800px) {
+  .menu-item.large {
+    height: 20rem;
+  }
 }
 .menu-item:hover {
   cursor: pointer;

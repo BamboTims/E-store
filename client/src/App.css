@@ -13,8 +13,14 @@ html {
 body {
 	font-family: "Kanit", sans-serif;
 	padding: 2rem 6rem;
+
 }
 
+@media screen and (max-width: 800px) {
+	body{
+		padding: 1rem;
+	}
+}
 a {
 	text-decoration: none;
 	color: black;

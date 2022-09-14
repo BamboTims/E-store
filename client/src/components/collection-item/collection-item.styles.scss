@@ -30,6 +30,22 @@
 			display: block;
 		}
 	}
+
+	@media screen and (max-width: 800px) {
+		width: 40vw;
+
+		.custom-button {
+			width: 90%;
+			opacity: 0.8;
+			display: block;
+		}
+
+		&:hover {
+			.image {
+				opacity: unset;
+			}
+		}
+	}
 }
 
 .collection-footer {
@@ -44,5 +60,9 @@
 
 	.price {
 		width: 10%;
+	}
+
+	@media screen and (max-width: 800px) {
+		font-size: 1.5rem;
 	}
 }

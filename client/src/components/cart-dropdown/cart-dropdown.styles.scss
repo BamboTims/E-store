@@ -12,6 +12,10 @@
 	flex-direction: column;
 	border: 1px solid black;
 
+	@media screen and (max-width: 800px) {
+		right: 1rem;
+	}
+
 	.empty-message {
 		font-weight: lighter;
 		display: block;

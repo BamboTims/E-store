@@ -1,6 +1,7 @@
 .collection {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .collection h1 {
   font-size: 2rem;
@@ -11,4 +12,9 @@
   row-gap: 3rem;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
+}
+@media screen and (max-width: 800px) {
+  .collection .items {
+    grid-template-columns: 1fr 1fr;
+  }
 }/*# sourceMappingURL=collection.styles.css.map */

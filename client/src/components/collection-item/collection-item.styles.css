@@ -26,6 +26,19 @@
 .collection-item:hover .custom-button {
   display: block;
 }
+@media screen and (max-width: 800px) {
+  .collection-item {
+    width: 40vw;
+  }
+  .collection-item .custom-button {
+    width: 90%;
+    opacity: 0.8;
+    display: block;
+  }
+  .collection-item:hover .image {
+    opacity: unset;
+  }
+}
 
 .collection-footer {
   height: 5%;
@@ -38,4 +51,9 @@
 }
 .collection-footer .price {
   width: 10%;
+}
+@media screen and (max-width: 800px) {
+  .collection-footer {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=collection-item.styles.css.map */

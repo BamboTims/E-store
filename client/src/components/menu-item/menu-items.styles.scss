@@ -10,6 +10,10 @@
 		margin: 0 7.5px 15px;
 		overflow: hidden;
 
+		@media screen and (max-width: 800px) {
+			height: 20rem;
+		}
+
 		&:first-child {
 			margin-right: 7.5px;
 		}
@@ -20,6 +24,10 @@
 
 		&.large {
 			height: 38rem;
+				
+		@media screen and (max-width: 800px) {
+			height: 20rem;
+		}
 		}
 
 		&:hover {

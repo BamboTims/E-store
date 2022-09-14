@@ -15,4 +15,9 @@
 .sign-in span a:link, .sign-in span a:visited {
   color: grey;
   text-decoration: underline;
+}
+@media screen and (max-width: 800px) {
+  .sign-in {
+    width: 90vw;
+  }
 }/*# sourceMappingURL=sign-in.styles.css.map */
