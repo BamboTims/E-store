@@ -1,8 +1,8 @@
 # example netlify.toml
 [build]
-  command = "npm run dev"
+  command = "npm run deploy"
   functions = "netlify/functions"
-  publish = "/build"
+  publish = "./build"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.

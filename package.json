@@ -6,12 +6,11 @@
 		"npm": "8.11.0"
 	},
 	"scripts": {
-		"client": "cd client && npm install && npm run start",
+		"client": "cd client && npm run start",
 		"server": "nodemon server.js",
 		"build": "cd client && npm install && npm run build",
 		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-		"deploy": "concurrently --kill-others-on-fail \"npm run server\" \"npm run netlify-build\"",
-		"netlify-build": "cd client && npm install --no-shrinkwrap && npm run build"
+		"deploy": "concurrently --kill-others-on-fail \"npm run server\" \"npm run build\""
 	},
 	"dependencies": {
 		"body-parser": "^1.18.3",
