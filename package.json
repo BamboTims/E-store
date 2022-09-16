@@ -10,9 +10,9 @@
 		"server": "node server.js",
 		"build": "cd client && npm install && npm run build",
 		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-		"deploy": "concurrently --kill-others-on-fail \"npm run server\" \"npm run build\"",
+		"deploy": "concurrently --kill-others-on-fail \"npm run server\" \"npm run netlify-build\"",
 		"start": "node server.js",
-		"heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+		"netlify-build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
 	},
 	"dependencies": {
 		"body-parser": "^1.18.3",
