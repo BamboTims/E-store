@@ -1,19 +1,24 @@
 {
-	"name": "",
-	"short_name": "",
+	"name": "E-Clothing Store",
+	"short_name": "E-store",
 	"icons": [
 		{
-			"src": "/android-chrome-192x192.png",
+			"src": "logo192.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "/android-chrome-512x512.png",
+			"src": "logo512.png",
 			"sizes": "512x512",
 			"type": "image/png"
+		},
+		{
+			"src": "/favicon.ico",
+			"sizes": "64x64 32x32 24x24 16x16",
+			"type": "image/x=icon"
 		}
 	],
-	"theme_color": "#ffffff",
+	"theme_color": "#000000",
 	"background_color": "#ffffff",
 	"display": "standalone"
 }

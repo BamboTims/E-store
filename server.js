@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const enforce = require("express-sslify");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
@@ -14,8 +15,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 if (process.env.NODE_ENV === "production") {
+	app.use(enforce.HTTPS({ trustProtoHeader: true }));
 	app.use(express.static(path.join(__dirname, "client/build")));
-
 	app.get("*", (req, res) => {
 		res.sendFile(path.join(__dirname, "client/build", "index.html"));
 	});
@@ -35,6 +36,10 @@ app.post("/payment", (req, res) => {
 			res.status(200).send({ success: stripeSuccess });
 		}
 	});
+});
+
+app.get("/service-worker.js", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "..", "build", "serviceWorker.js"));
 });
 
 app.listen(port, (error) => {
