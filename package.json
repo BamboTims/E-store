@@ -12,7 +12,7 @@
 		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
 		"deploy": "concurrently --kill-others-on-fail \"npm run server\" \"npm run netlify-build\"",
 		"start": "node server.js",
-		"netlify-build": "cd client && npm install && npm install --only=prod --no-shrinkwrap && npm run build"
+		"netlify-build": "cd client && npm install --no-shrinkwrap && npm run build"
 	},
 	"dependencies": {
 		"body-parser": "^1.18.3",
