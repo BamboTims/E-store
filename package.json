@@ -7,7 +7,7 @@
 	},
 	"scripts": {
 		"client": "cd client && npm run start",
-		"server": "cd .. && nodemon server.js",
+		"server": "npm install && nodemon server.js",
 		"build": "cd client && npm install && npm run build",
 		"dev": "concurrently --kill-others --success first \"npm run client\" \"npm run server\"",
 		"deploy": "concurrently --kill-others-on-fail \"npm run build\" \"npm run server\""
