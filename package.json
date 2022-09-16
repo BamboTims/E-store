@@ -7,10 +7,10 @@
 	},
 	"scripts": {
 		"client": "cd client && npm run start",
-		"server": "npm install && node server.js",
+		"server": "nodemon server.js",
 		"build": "cd client && npm install && npm run build",
 		"dev": "concurrently --kill-others --success first \"npm run client\" \"npm run server\"",
-		"deploy": "concurrently --success last \"npm run server\" \"cd client && npm install && npm run build\""
+		"deploy": " npm run server && cd client && npm install && npm run build"
 	},
 	"dependencies": {
 		"body-parser": "^1.18.3",
