@@ -6,6 +6,7 @@
 		"npm": "8.11.0"
 	},
 	"scripts": {
+		"client-install": "npm install --prefix client",
 		"client": "npm run start --prefix client",
 		"server": "nodemon server.js",
 		"build": "cd client && npm install && npm run build",
