@@ -10,7 +10,7 @@
 		"server": "nodemon server.js",
 		"build": "cd client && npm install && npm run build",
 		"dev": "concurrently --kill-others --success first \"npm run server\" \"npm run start --prefix client\"",
-		"deploy": "concurrently --kill-others \"npm run server\" \"npm run build\""
+		"deploy": "npm run server"
 	},
 	"dependencies": {
 		"body-parser": "^1.18.3",
